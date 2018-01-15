@@ -6,29 +6,36 @@ html {
 }
 
 body {
-font-size: 18px;
-font-family: Helvetica;
+line-height: 1.4;
+font-family: "Helvetica", sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 /* Header */
 
-header {
+.company {
   background-color: black;
-  height: 2rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
+  color: white;
 }
 
-header h3 {
-  color: white;
-  margin: 0.66rem 1rem;
+.company .container {
+  display: flex;
+  align-items: center;
+  padding: .66rem 0 .66rem 0.5rem;
+}
+
+.company span {
   font-size: 1rem;
 }
 
-header img {
+.company img {
   height: 1.5rem;
   width: auto;
+  padding-right: 1rem;
 }
 
 /* Banner */
@@ -39,29 +46,47 @@ header img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
 }
 
 .title {
+  position: relative;
+  top: 9rem;
   width: 20rem;
   background-color: black;
   color: white;
-  height: 15rem;
-  display: flex;
-  flex-direction: column;
-  margin-top: 9rem;
-  margin-left: 9rem;
+  padding: 2rem 3rem;
+
 }
 
-.title h3 {
-  font-size: 1rem;
-  margin-top: 2rem;
-  margin-left: 3rem;
+.title h4 {
+
 }
 
-.title h1 {
-  font-size: 2rem;
-  margin-left: 3rem;
+h1 {
+    margin: 0.25rem 0;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+@media only screen and (max-width: 470px) {
+  .banner {
+    height: 15rem;
+  }
+
+  .title {
+    width: 100%;
+    padding: 1rem 2rem;
+    top: 8.5rem;
+  }
+
+  .title h4 {
+font-size: 0.77rem;
+  }
+
+  #title {
+      font-size: 1rem;
+  }
+
 }
 
 /* Navigation */
@@ -69,78 +94,127 @@ header img {
 nav {
   background-color: firebrick;
   color: white;
-  height: 2.75rem;
-  display: flex;
-  justify-content: space-around;
 }
 
-nav span {
-  margin: 0.75rem 0rem;
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  list-style-type: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mobile-nav {
+    display: block;
+    text-align: center;
+  }
+  nav ul {
+    display: none;
+  }
 }
 
 /* Body */
 
 .items {
   display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.product {
+  width: 30%;
+}
+
+.description{
+  background-color: black;
+  padding: 0.5rem;
+  color: white;
+  display: block;
+  text-align: center;
 }
 
 .image {
-  height: 15rem;
-  width: 15rem;
+  height: 9rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   border: 4px solid black;
   overflow: hidden;
-  justify-content: center;
-  margin: 3rem 3rem 3rem 3rem;
+  padding: 2rem 0;
 }
 
 .image img {
-  height: 9rem;
-  width: auto;
+  max-width: 8rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .glasses {
+    display: none;
+  }
+
+  .product {
+    width: 47%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .product {
+    width: 90%;
+    margin: auto;
+  }
+  .watch {
+    display: none;
+  }
+
+  .items {
+    flex-wrap: wrap;
+  }
 }
 
 /* Headings */
 
 .headings {
+  margin-top: 3rem;
   display: flex;
-  height: 4rem;
-  justify-content: center;
-  margin-bottom: 4rem;
-}
-
-#location {
-  margin-right: 15rem;
-
+  justify-content: space-between;
 }
 
 .headings p {
   margin: 0 0;
 }
 
-.box {
-  height: 3rem;
-  width: 17rem;
-  background-color: black;
-  color: white;
+.sub-heading {
   display: flex;
+flex-direction: column;
+width: 35%;
 }
 
-.box p {
-  margin: 1rem 0rem 1rem 2rem;
+@media only screen and (max-width: 470px) {
+  .headings {
+    flex-wrap: wrap;
+  }
+
+  .sub-heading {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
 }
 
 /* Footer */
 
 footer {
-  height: 10rem;
+  padding: 5rem 0;
+  margin-top: 4rem;
   background-color: black;
   color: white;
-  display: flex;
-  align-items: center;
 }
 
-footer span {
-  margin-left: 2.5rem;
+@media only screen and (max-width: 470px) {
+  footer {
+    text-align: center;
+  }
 }
